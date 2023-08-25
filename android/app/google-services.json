@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "966863467456",
+    "project_id": "chiti-by-antstudio",
+    "storage_bucket": "chiti-by-antstudio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966863467456:android:2fe0534a6a1131a4578e25",
+        "android_client_info": {
+          "package_name": "com.chiti_by_antstuido"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966863467456-gah94ruj5k6gvagb73jrgunm21freua7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chiti_by_antstuido",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "966863467456-e1pmm7s48jaigispq3dsma4lug45vsi3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGi2wZQqs-vOUkzNCXTMRKemfF9wpQ9z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966863467456-9462ebj0k7ep2iiclq2jbi63bbdkftg0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "966863467456-npot7qp5cg1j3qg6trblm90r267vdpp5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.chiti-by-antstuido"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">chiti_by_antstuido</string>
+    <string name="app_name">Chti</string>
+    <string name="CodePushDeploymentKey" moduleConfig="true" translatable="false">
+        XzC6wpmhWIwsLlhUOywGwBqeK3faipUF4ACL3</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
+    <string name="facebook_app_id">665948038929267</string>
+    <string name="facebook_client_token">cfb9dc85b1fc3a133f79c891103c1bbe</string>
 </resources>

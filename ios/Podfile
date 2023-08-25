@@ -31,6 +31,12 @@ target 'chiti_by_antstuido' do
   # Flags change depending on the env values.
   flags = get_default_flags()
 
+  $FirebaseSDKVersion = '10.12.0'
+  $RNFirebaseAsStaticFramework = true
+  pod 'Firebase', :modular_headers => true
+  pod 'FirebaseCore', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+  
   use_react_native!(
     :path => config[:reactNativePath],
     # Hermes is now enabled by default. Disable by setting this flag to false.
