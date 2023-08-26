@@ -7,7 +7,6 @@
     "lint": "eslint .",
     "tsc:check": "tsc -p .",
     "patch": "patch-package",
-    "start": "react-native start",
     "ios": "react-native run-ios",
     "asset": "npx react-native-asset",
     "android": "react-native run-android",
@@ -17,6 +16,7 @@
     "env-development": "cp .env.development .env",
     "eslint:check": "eslint . --ext .js,.ts,.tsx",
     "eslint:fix": "eslint . --ext .js,.ts,.tsx --fix",
+    "start": "watchman watch-del-all && react-native start",
     "sha1": "cd android && ./gradlew signingReport && cd android",
     "clean": "yarn cache clean && cd android && ./gradlew clean && cd ..",
     "aab": "cd android && ./gradlew clean && ./gradlew bundleRelease && cd ..",
@@ -26,6 +26,7 @@
     "splash": "react-native generate-bootsplash src/assets/images/Logo_Chiti.png --background-color=FFFFFF --logo-width=220 --assets-path=assets --flavor=main --platforms=android,ios"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@notifee/react-native": "^7.8.0",
     "@react-native-async-storage/async-storage": "^1.19.3",
     "@react-native-community/netinfo": "^9.4.1",
@@ -41,6 +42,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-wildcard": "^7.0.0",
     "i18next": "^23.4.5",
+    "lottie-react-native": "^6.2.0",
     "moment": "^2.29.4",
     "pretty-format": "^29.6.3",
     "react": "18.2.0",

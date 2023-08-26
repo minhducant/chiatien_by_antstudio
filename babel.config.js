@@ -1,9 +1,8 @@
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
   plugins: [
-    'react-native-reanimated/plugin',
     [
-      'module-resolver',
+      'react-native-reanimated/plugin',
       {
         root: ['.'],
         extensions: [
@@ -18,22 +17,19 @@ module.exports = {
           '.json',
         ],
         alias: {
-          '@assets': './src/assets',
-          '@components': './src/components',
-          '@configs': './src/configs',
-          '@hooks': './src/hooks',
-          '@navigation': './src/navigation',
-          '@screens': './src/screens',
-          '@services': './src/services',
-          '@utils': './src/utils',
           '@i18n': './src/i18n',
+          '@utils': './src/utils',
+          '@hooks': './src/hooks',
           '@styles': './src/styles',
+          '@stores': './src/stores',
+          '@assets': './src/assets',
+          '@screens': './src/screens',
+          '@configs': './src/configs',
+          '@services': './src/services',
+          '@navigation': './src/navigation',
+          '@components': './src/components',
           '@repository': './src/repository',
         },
-      },
-      'wildcard',
-      {
-        exts: ['js'],
       },
     ],
   ],
