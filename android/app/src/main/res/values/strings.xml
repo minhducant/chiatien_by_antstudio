@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chti</string>
+    <string name="app_name">Chiti</string>
     <string name="CodePushDeploymentKey" moduleConfig="true" translatable="false">
         XzC6wpmhWIwsLlhUOywGwBqeK3faipUF4ACL3</string>
     <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>

@@ -23,7 +23,7 @@
     "apk": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ..",
     "CodePush:ios-demo": "appcenter codepush release-react -a ad.antstudio-gmail.com/Chia_tien_IOS -d Staging -t '>=1.0.0'",
     "CodePush:android-demo": "appcenter codepush release-react -a ad.antstudio-gmail.com/Chia_tien_Android -d Staging -t '>=1.0.0'",
-    "splash": "react-native generate-bootsplash src/assets/image/Hallo_Logo_Red_Background.png --background-color=FFFFFF --logo-width=150 --assets-path=assets --flavor=main --platforms=android,ios"
+    "splash": "react-native generate-bootsplash src/assets/images/Logo_Chiti.png --background-color=FFFFFF --logo-width=220 --assets-path=assets --flavor=main --platforms=android,ios"
   },
   "dependencies": {
     "@notifee/react-native": "^7.8.0",
@@ -47,7 +47,7 @@
     "react-i18next": "^13.2.0",
     "react-native": "0.72.4",
     "react-native-biometrics": "^3.0.1",
-    "react-native-bootsplash": "^5.0.2",
+    "react-native-bootsplash": "4.7.5",
     "react-native-calendars": "^1.1300.0",
     "react-native-code-push": "^8.1.0",
     "react-native-confirmation-code-field": "^7.3.1",
