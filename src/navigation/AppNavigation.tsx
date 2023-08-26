@@ -8,7 +8,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-import FCMService from '@utils/FCMService';
+// import FCMService from '@utils/FCMService';
 // import {setFirebaseToken} from '../stores/action';
 
 //-----------------------NoFooter------------------------//
@@ -17,12 +17,12 @@ import FCMService from '@utils/FCMService';
 // import BottomTabs from '@navigation/BottomTabs';
 //--------------------Authentication---------------------//
 import LoginScreen from '../screens/Authentication/LoginScreen';
-// import SpanishScreen from '@screens/Authentication/SpanishScreen';
-// import RegisterScreen from '@screens/Authentication/RegisterScreen';
-// import ForgetPassScreen from '@screens/Authentication/ForgetPassScreen';
-// import VerifyMailScreen from '@screens/Authentication/VerifyMailScreen';
-// import VerifyCodeScreen from '@screens/Authentication/VerifyCodeScreen';
-// import OnboardingScreen from '@screens/Authentication/OnboardingScreen';
+import SpanishScreen from '../screens/Authentication/SpanishScreen';
+import RegisterScreen from '../screens/Authentication/RegisterScreen';
+import ForgetPassScreen from '../screens/Authentication/ForgetPassScreen';
+import VerifyMailScreen from '../screens/Authentication/VerifyMailScreen';
+import VerifyCodeScreen from '../screens/Authentication/VerifyCodeScreen';
+import OnboardingScreen from '../screens/Authentication/OnboardingScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -34,10 +34,10 @@ const AuthStack = () => (
     initialRouteName="LoginScreen"
     screenOptions={{headerShown: false}}>
     <Stack.Screen name="LoginScreen" component={LoginScreen} />
-    {/* <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+    <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
     <Stack.Screen name="VerifyMailScreen" component={VerifyMailScreen} />
     <Stack.Screen name="VerifyCodeScreen" component={VerifyCodeScreen} />
-    <Stack.Screen name="ForgetPassScreen" component={ForgetPassScreen} /> */}
+    <Stack.Screen name="ForgetPassScreen" component={ForgetPassScreen} />
   </Stack.Navigator>
 );
 
