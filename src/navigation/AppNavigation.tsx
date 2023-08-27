@@ -14,7 +14,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 //-----------------------NoFooter------------------------//
 // import NoFooter from '@navigation/NoFooter';
 //----------------------BottomTabs-----------------------/
-// import BottomTabs from '@navigation/BottomTabs';
+import BottomTabs from './BottomTabs';
 //--------------------Authentication---------------------//
 import LoginScreen from '../screens/Authentication/LoginScreen';
 import SpanishScreen from '../screens/Authentication/SpanishScreen';
@@ -69,10 +69,10 @@ export const AppNavigation = () => {
 
   return (
     <NavigationContainer onReady={() => RNBootSplash.hide()}>
-      {/* <Stack.Navigator
-        initialRouteName="AuthStack"
+      <Stack.Navigator
+        initialRouteName="BottomTabs"
         screenOptions={{headerShown: false}}>
-        {appStatus === APP_STATUS.SPANISH && (
+        {/* {appStatus === APP_STATUS.SPANISH && (
           <Stack.Screen name="SpanishScreen" component={SpanishScreen} />
         )}
         {appStatus === APP_STATUS.ONBOARDING && (
@@ -81,17 +81,14 @@ export const AppNavigation = () => {
         {appStatus === APP_STATUS.AUTH && (
           <Stack.Screen name="AuthStack" component={AuthStack} />
         )}
-        {appStatus === APP_STATUS.APP && (
-          <Stack.Screen
-            name="BottomTabsNavigator"
-            component={BottomTabsNavigator}
-          />
-        )}
-      </Stack.Navigator> */}
+        {appStatus === APP_STATUS.APP && ( */}
+        <Stack.Screen name="BottomTabs" component={BottomTabs} />
+        {/* )} */}
+      </Stack.Navigator>
 
-      <Drawer.Navigator>
+      {/* <Drawer.Navigator>
         <Drawer.Screen name="LoginScreen" component={LoginScreen} />
-      </Drawer.Navigator>
+      </Drawer.Navigator> */}
     </NavigationContainer>
   );
 };

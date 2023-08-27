@@ -26,9 +26,8 @@ import {
 } from '../../assets/svg';
 import color from '../../styles/color';
 import themeStyle from '../../styles/theme.style';
-import {IconLibrary} from '../BaseComponent/IconLibrary';
 
-const TOAST_DURATION = 2500;
+const TOAST_DURATION = 2000;
 
 const ToastMessage = () => {
   const showingRef = useRef<any>(false);
@@ -134,8 +133,11 @@ const ToastMessage = () => {
               {toastOptions.message}
             </Text>
           </View>
-          <TouchableOpacity style={styles.closeIcon} onPress={hideToast}>
-            <IconLibrary name="close" size={27} color={color.WHITE} />
+          <TouchableOpacity
+            onPress={hideToast}
+            activeOpacity={0.7}
+            style={styles.closeIcon}>
+            <Text style={styles.closeText}>X</Text>
           </TouchableOpacity>
         </>
       )}
@@ -159,12 +161,13 @@ const styles = StyleSheet.create({
   },
   toastMessageContainer: {
     position: 'absolute',
-    top: normalize(20),
-    width: normalize(250),
+    top: normalize(30),
+    width: normalize(270),
     height: normalize(100),
     justifyContent: 'center',
     alignItems: 'flex-start',
     paddingLeft: normalize(40),
+    left: normalize(45),
   },
   toastMessage: {
     fontFamily: themeStyle.FONT_FAMILY,
@@ -174,13 +177,22 @@ const styles = StyleSheet.create({
   },
   toastTitle: {
     fontFamily: themeStyle.FONT_BOLD,
-    fontSize: 20,
+    fontSize: 18,
     color: color.WHITE,
   },
   closeIcon: {
     position: 'absolute',
-    top: normalize(40),
-    right: normalize(20),
+    top: normalize(33),
+    right: normalize(10),
     zIndex: 3,
+    width: normalize(50),
+    height: normalize(50),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  closeText: {
+    fontFamily: themeStyle.FONT_LOGO,
+    fontSize: 38,
+    color: color.WHITE,
   },
 });
