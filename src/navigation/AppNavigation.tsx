@@ -13,7 +13,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 //-----------------------NoFooter------------------------//
 // import NoFooter from '@navigation/NoFooter';
-//----------------------BottomTabs-----------------------//
+//----------------------BottomTabs-----------------------/
 // import BottomTabs from '@navigation/BottomTabs';
 //--------------------Authentication---------------------//
 import LoginScreen from '../screens/Authentication/LoginScreen';

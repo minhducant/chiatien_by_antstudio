@@ -9,8 +9,8 @@ import {Provider as ProviderPaper} from 'react-native-paper';
 import i18n from './src/i18n/index';
 import {store, persistor} from './src/stores/index';
 import {AppNavigation} from './src/navigation/AppNavigation';
-// import ModalToastMessage from './src/components/Modal/ModalToastMessage';
-// import ModalLoadingLottie from './src/components/Modal/ModalLoadingLottie';
+import ModalToastMessage from './src/components/Modal/ModalToastMessage';
+import ModalLoadingLottie from './src/components/Modal/ModalLoadingLottie';
 
 const codePushOptions = {
   installMode: CodePush.InstallMode.IMMEDIATE,
@@ -29,8 +29,8 @@ const App = () => {
         <PersistGate loading={null} persistor={persistor}>
           <I18nextProvider i18n={i18n}>
             <AppNavigation />
-            {/* <ModalToastMessage />
-            <ModalLoadingLottie /> */}
+            <ModalToastMessage />
+            <ModalLoadingLottie />
           </I18nextProvider>
         </PersistGate>
       </Provider>

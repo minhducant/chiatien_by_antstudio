@@ -1,14 +1,15 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useLayoutEffect, useCallback, useRef} from 'react';
 import {
   View,
   Text,
   Platform,
   StyleSheet,
+  PanResponder,
   TouchableOpacity,
+  InteractionManager,
   DeviceEventEmitter,
 } from 'react-native';
 import Animated, {
-  runOnJS,
   withDelay,
   withTiming,
   withSequence,
@@ -22,30 +23,30 @@ import {
   FailToastBackground,
   WarningToastBackground,
   SuccessToastBackground,
-} from '@assets/svg/index';
-import color from '@styles/color';
-import themeStyle from '@styles/theme.style';
-import {IconLibrary} from '@components/BaseComponent/IconLibrary';
+} from '../../assets/svg';
+import color from '../../styles/color';
+import themeStyle from '../../styles/theme.style';
+import {IconLibrary} from '../BaseComponent/IconLibrary';
 
-const TOAST_DURATION = 2000;
+const TOAST_DURATION = 2500;
 
 const ToastMessage = () => {
+  const showingRef = useRef<any>(false);
   const toastBottomAnimation = useSharedValue(-100);
-  const BOTTOM_VALUE = Platform.OS === 'ios' ? normalize(60) : normalize(20);
-  const [showing, setShowing] = useState(false);
   const [toastOptions, setToastOptions] = useState<any>({});
+  const BOTTOM_VALUE = Platform.OS === 'ios' ? normalize(60) : normalize(20);
 
   const showToastMessage = useCallback(
     (options: any) => {
       setToastOptions(options);
-      setShowing(true);
+      showingRef.current = true;
       toastBottomAnimation.value = withSequence(
         withTiming(BOTTOM_VALUE),
         withDelay(
           TOAST_DURATION,
-          withTiming(-100, undefined, finished => {
+          withTiming(normalize(-150), undefined, finished => {
             if (finished) {
-              runOnJS(setShowing)(false);
+              showingRef.current = false;
             }
           }),
         ),
@@ -54,7 +55,7 @@ const ToastMessage = () => {
     [BOTTOM_VALUE, toastBottomAnimation],
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const toastListener = DeviceEventEmitter.addListener(
       'SHOW_TOAST_MESSAGE',
       showToastMessage,
@@ -62,7 +63,17 @@ const ToastMessage = () => {
     return () => {
       toastListener.remove();
     };
-  }, [showToastMessage]);
+  });
+
+  useLayoutEffect(() => {
+    const toastListener = DeviceEventEmitter.addListener(
+      'HIDE_TOAST_MESSAGE',
+      hideToast,
+    );
+    return () => {
+      toastListener.remove();
+    };
+  });
 
   const animatedTopStyles = useAnimatedStyle(() => {
     return {
@@ -71,50 +82,63 @@ const ToastMessage = () => {
   });
 
   const hideToast = useCallback(() => {
-    toastBottomAnimation.value = withTiming(-100, undefined, finished => {
-      if (finished) {
-        runOnJS(setShowing)(false);
-      }
+    InteractionManager.runAfterInteractions(() => {
+      toastBottomAnimation.value = withTiming(
+        normalize(-150),
+        undefined,
+        finished => {
+          if (finished) {
+            showingRef.current = false;
+          }
+        },
+      );
     });
   }, [toastBottomAnimation]);
 
-  if (!showing) {
-    return null;
-  }
+  const panResponder = PanResponder.create({
+    onStartShouldSetPanResponder: () => true,
+    onPanResponderMove: (event, gestureState) => {
+      if (gestureState.dy > 0) {
+        hideToast();
+      }
+    },
+    onPanResponderRelease: () => {},
+  });
 
   return (
-    <Animated.View style={[styles.toastContainer, animatedTopStyles]}>
-      {toastOptions.type === 'success' ? (
-        <SuccessToastBackground />
-      ) : toastOptions.type === 'fail' ? (
-        <FailToastBackground />
-      ) : toastOptions.type === 'warning' ? (
-        <WarningToastBackground />
-      ) : (
-        <HelpToastBackground />
+    <Animated.View
+      {...panResponder.panHandlers}
+      style={[styles.toastContainer, animatedTopStyles]}>
+      {showingRef.current && (
+        <>
+          {toastOptions.type === 'success' ? (
+            <SuccessToastBackground />
+          ) : toastOptions.type === 'fail' ? (
+            <FailToastBackground />
+          ) : toastOptions.type === 'warning' ? (
+            <WarningToastBackground />
+          ) : (
+            <HelpToastBackground />
+          )}
+          <View style={styles.toastMessageContainer}>
+            <Text style={styles.toastTitle}>
+              {toastOptions.type === 'success'
+                ? 'Well done!'
+                : toastOptions.type === 'fail'
+                ? 'Oh snap!'
+                : toastOptions.type === 'warning'
+                ? 'Warning!'
+                : 'Hi there!'}
+            </Text>
+            <Text style={styles.toastMessage} numberOfLines={2}>
+              {toastOptions.message}
+            </Text>
+          </View>
+          <TouchableOpacity style={styles.closeIcon} onPress={hideToast}>
+            <IconLibrary name="close" size={27} color={color.WHITE} />
+          </TouchableOpacity>
+        </>
       )}
-      <View style={styles.toastMessageContainer}>
-        <Text style={styles.toastTitle}>
-          {toastOptions.type === 'success'
-            ? 'Well done!'
-            : toastOptions.type === 'fail'
-            ? 'Oh snap!'
-            : toastOptions.type === 'warning'
-            ? 'Warning!'
-            : 'Hi there!'}
-        </Text>
-        <Text style={styles.toastMessage} numberOfLines={2}>
-          {toastOptions.message}
-        </Text>
-      </View>
-      <TouchableOpacity style={styles.closeIcon} onPress={hideToast}>
-        <IconLibrary
-          library="AntDesign"
-          name="close"
-          size={27}
-          color={color.WHITE}
-        />
-      </TouchableOpacity>
     </Animated.View>
   );
 };
@@ -135,7 +159,7 @@ const styles = StyleSheet.create({
   },
   toastMessageContainer: {
     position: 'absolute',
-    top: 25,
+    top: normalize(20),
     width: normalize(250),
     height: normalize(100),
     justifyContent: 'center',
@@ -146,10 +170,10 @@ const styles = StyleSheet.create({
     fontFamily: themeStyle.FONT_FAMILY,
     fontSize: 14,
     color: color.WHITE,
-    paddingLeft: normalize(5),
+    paddingTop: normalize(5),
   },
   toastTitle: {
-    fontFamily: themeStyle.FONT_FAMILY,
+    fontFamily: themeStyle.FONT_BOLD,
     fontSize: 20,
     color: color.WHITE,
   },

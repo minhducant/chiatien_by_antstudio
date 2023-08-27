@@ -16,7 +16,7 @@
     "env-development": "cp .env.development .env",
     "eslint:check": "eslint . --ext .js,.ts,.tsx",
     "eslint:fix": "eslint . --ext .js,.ts,.tsx --fix",
-    "start": "watchman watch-del-all && react-native start -- --reset-cache",
+    "start": "watchman watch-del-all && react-native start",
     "sha1": "cd android && ./gradlew signingReport && cd android",
     "clean": "yarn cache clean && cd android && ./gradlew clean && cd ..",
     "aab": "cd android && ./gradlew clean && ./gradlew bundleRelease && cd ..",
