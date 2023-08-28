@@ -34,5 +34,5 @@ export default {
   VIOLET: '#85517D',
   LIGHT_GRAY: '#f2f2f2',
   HEIGHT_BLUE: '#05399F',
-  MAIN: '#ED2127',
+  MAIN: '#00B732',
 };

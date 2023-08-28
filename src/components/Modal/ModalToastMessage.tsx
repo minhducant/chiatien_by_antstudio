@@ -3,7 +3,6 @@ import {
   View,
   Text,
   Platform,
-  StyleSheet,
   PanResponder,
   TouchableOpacity,
   InteractionManager,
@@ -24,9 +23,8 @@ import {
   FailToastBackground,
   WarningToastBackground,
   SuccessToastBackground,
-} from '../../assets/svg';
-import color from '../../styles/color';
-import themeStyle from '../../styles/theme.style';
+} from '@assets/svg';
+import {toastStyle as styles} from '@styles/toast.style';
 
 const TOAST_DURATION = 2000;
 
@@ -147,48 +145,3 @@ const ToastMessage = () => {
 };
 
 export default ToastMessage;
-
-const styles = StyleSheet.create({
-  toastContainer: {
-    position: 'absolute',
-    bottom: 0,
-    width: '90%',
-    alignItems: 'center',
-    alignSelf: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0)',
-  },
-  toastBackground: {
-    position: 'absolute',
-  },
-  toastMessageContainer: {
-    position: 'absolute',
-    top: normalize(30),
-    width: normalize(270),
-    height: normalize(100),
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    paddingLeft: normalize(40),
-    left: normalize(45),
-  },
-  toastMessage: {
-    fontFamily: themeStyle.FONT_FAMILY,
-    fontSize: 14,
-    color: color.WHITE,
-    paddingTop: normalize(5),
-  },
-  toastTitle: {
-    fontFamily: themeStyle.FONT_BOLD,
-    fontSize: 18,
-    color: color.WHITE,
-  },
-  closeIcon: {
-    position: 'absolute',
-    top: normalize(30),
-    right: normalize(0),
-    zIndex: 3,
-    width: normalize(50),
-    height: normalize(50),
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

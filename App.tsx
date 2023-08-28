@@ -6,11 +6,11 @@ import {I18nextProvider} from 'react-i18next';
 import {PersistGate} from 'redux-persist/integration/react';
 import {Provider as ProviderPaper} from 'react-native-paper';
 
-import i18n from './src/i18n/index';
-import {store, persistor} from './src/stores/index';
-import {AppNavigation} from './src/navigation/AppNavigation';
-import ModalToastMessage from './src/components/Modal/ModalToastMessage';
-import ModalLoadingLottie from './src/components/Modal/ModalLoadingLottie';
+import i18n from '@i18n/index';
+import {store, persistor} from '@stores/index';
+import {AppNavigation} from '@navigation/AppNavigation';
+import ModalToastMessage from '@components/Modal/ModalToastMessage';
+import ModalLoadingLottie from '@components/Modal/ModalLoadingLottie';
 
 const codePushOptions = {
   installMode: CodePush.InstallMode.IMMEDIATE,

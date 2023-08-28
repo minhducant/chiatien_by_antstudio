@@ -20,7 +20,7 @@ const ModalLoadingLottie = () => {
     <Modal contentContainerStyle={stylesLoading.modal} visible={isLoading}>
       <LottieView
         ref={lottieRef}
-        source={require('../../assets/lottie/animation_llrpqg6v.json')}
+        source={require('@assets/lottie/animation_llrpqg6v.json')}
         style={stylesLoading.lottieView}
       />
     </Modal>
