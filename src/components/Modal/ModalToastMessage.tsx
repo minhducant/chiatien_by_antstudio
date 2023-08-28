@@ -19,6 +19,7 @@ import Animated, {
 import normalize from 'react-native-normalize';
 
 import {
+  IconClose,
   HelpToastBackground,
   FailToastBackground,
   WarningToastBackground,
@@ -137,7 +138,7 @@ const ToastMessage = () => {
             onPress={hideToast}
             activeOpacity={0.7}
             style={styles.closeIcon}>
-            <Text style={styles.closeText}>X</Text>
+            <IconClose />
           </TouchableOpacity>
         </>
       )}
@@ -182,17 +183,12 @@ const styles = StyleSheet.create({
   },
   closeIcon: {
     position: 'absolute',
-    top: normalize(33),
-    right: normalize(10),
+    top: normalize(30),
+    right: normalize(0),
     zIndex: 3,
     width: normalize(50),
     height: normalize(50),
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  closeText: {
-    fontFamily: themeStyle.FONT_LOGO,
-    fontSize: 38,
-    color: color.WHITE,
   },
 });

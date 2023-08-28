@@ -1,5 +1,5 @@
 export default {
-  FONT_LOGO: 'Ketimun',
+  FONT_LOGO: 'Ketimun-Medium',
   FONT_FAMILY: 'Montserrat-Regular',
   FONT_BOLD: 'Montserrat-Bold',
   FONT_BOLD_ITALIC: 'Montserrat-Bold',

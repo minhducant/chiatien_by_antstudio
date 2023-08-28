@@ -69,10 +69,10 @@ export const AppNavigation = () => {
 
   return (
     <NavigationContainer onReady={() => RNBootSplash.hide()}>
-      <Stack.Navigator
+      {/* <Stack.Navigator
         initialRouteName="BottomTabs"
         screenOptions={{headerShown: false}}>
-        {/* {appStatus === APP_STATUS.SPANISH && (
+        {appStatus === APP_STATUS.SPANISH && (
           <Stack.Screen name="SpanishScreen" component={SpanishScreen} />
         )}
         {appStatus === APP_STATUS.ONBOARDING && (
@@ -81,14 +81,20 @@ export const AppNavigation = () => {
         {appStatus === APP_STATUS.AUTH && (
           <Stack.Screen name="AuthStack" component={AuthStack} />
         )}
-        {appStatus === APP_STATUS.APP && ( */}
-        <Stack.Screen name="BottomTabs" component={BottomTabs} />
-        {/* )} */}
-      </Stack.Navigator>
+        {appStatus === APP_STATUS.APP && (
+          <Stack.Screen name="BottomTabs" component={BottomTabs} />
+        )}
+      </Stack.Navigator> */}
 
-      {/* <Drawer.Navigator>
+      {/* <Stack.Navigator
+        initialRouteName="BottomTabs"
+        screenOptions={{headerShown: false}}>
+        <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      </Stack.Navigator> */}
+
+      <Drawer.Navigator>
         <Drawer.Screen name="LoginScreen" component={LoginScreen} />
-      </Drawer.Navigator> */}
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };

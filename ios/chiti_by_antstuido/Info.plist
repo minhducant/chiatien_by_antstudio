@@ -52,7 +52,7 @@
 	<key>NSAppTransportSecurity</key>
 	<dict/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
@@ -71,11 +71,10 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string></string>
-		<string>Ketimun.otf</string>
 		<string>Montserrat-Bold.ttf</string>
 		<string>Montserrat-Italic.ttf</string>
 		<string>Montserrat-Regular.ttf</string>
+		<string>Ketimun-Medium.otf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
