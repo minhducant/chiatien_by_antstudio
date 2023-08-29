@@ -12,9 +12,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		25D49489D65E4EB5BA53D866 /* Ketimun-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FEB66AC3E2AB4452A2CEDCB6 /* Ketimun-Medium.otf */; };
 		29C31DCDE99E47FAB4108A29 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F815084D79FD4AA5B116E93C /* Montserrat-Regular.ttf */; };
 		460BB07500584AB8B0EA9CE6 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F17E5CCC47A4A5EAD34DF41 /* Montserrat-Italic.ttf */; };
+		6D6609F052E2406E9E70AF22 /* Ketimun.otf in Resources */ = {isa = PBXBuildFile; fileRef = 048729F9C31A458FA14634D4 /* Ketimun.otf */; };
 		7699B88040F8A987B510C191 /* libPods-chiti_by_antstuido-chiti_by_antstuidoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-chiti_by_antstuido-chiti_by_antstuidoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8D99A5E48FDA4143A476F2F4 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63870431071D454F9FFDA89E /* Montserrat-Bold.ttf */; };
@@ -37,6 +37,7 @@
 		00E356EE1AD99517003FC87E /* chiti_by_antstuidoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chiti_by_antstuidoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* chiti_by_antstuidoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chiti_by_antstuidoTests.m; sourceTree = "<group>"; };
+		048729F9C31A458FA14634D4 /* Ketimun.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ketimun.otf; path = ../src/assets/fonts/Ketimun.otf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* chiti_by_antstuido.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chiti_by_antstuido.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = chiti_by_antstuido/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = chiti_by_antstuido/AppDelegate.mm; sourceTree = "<group>"; wrapsLines = 0; };
@@ -52,13 +53,13 @@
 		63870431071D454F9FFDA89E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = chiti_by_antstuido/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-chiti_by_antstuido-chiti_by_antstuidoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chiti_by_antstuido-chiti_by_antstuidoTests.release.xcconfig"; path = "Target Support Files/Pods-chiti_by_antstuido-chiti_by_antstuidoTests/Pods-chiti_by_antstuido-chiti_by_antstuidoTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE774F7D2A9D8D0900ACDFB6 /* chiti_by_antstuido.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = chiti_by_antstuido.entitlements; path = chiti_by_antstuido/chiti_by_antstuido.entitlements; sourceTree = "<group>"; };
 		CEFBA4BA2A98B5A5009D6ABD /* chiti_by_antstuido-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chiti_by_antstuido-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEFBA4BB2A98B5A5009D6ABD /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		CEFBA4BD2A9988A0009D6ABD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "chiti_by_antstuido/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEFBA4BF2A999A96009D6ABD /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = chiti_by_antstuido/BootSplash.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F815084D79FD4AA5B116E93C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		FEB66AC3E2AB4452A2CEDCB6 /* Ketimun-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ketimun-Medium.otf"; path = "../src/assets/fonts/Ketimun-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		13B07FAE1A68108700A75B9A /* chiti_by_antstuido */ = {
 			isa = PBXGroup;
 			children = (
+				CE774F7D2A9D8D0900ACDFB6 /* chiti_by_antstuido.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -127,7 +129,7 @@
 				63870431071D454F9FFDA89E /* Montserrat-Bold.ttf */,
 				5F17E5CCC47A4A5EAD34DF41 /* Montserrat-Italic.ttf */,
 				F815084D79FD4AA5B116E93C /* Montserrat-Regular.ttf */,
-				FEB66AC3E2AB4452A2CEDCB6 /* Ketimun-Medium.otf */,
+				048729F9C31A458FA14634D4 /* Ketimun.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -281,7 +283,7 @@
 				8D99A5E48FDA4143A476F2F4 /* Montserrat-Bold.ttf in Resources */,
 				460BB07500584AB8B0EA9CE6 /* Montserrat-Italic.ttf in Resources */,
 				29C31DCDE99E47FAB4108A29 /* Montserrat-Regular.ttf in Resources */,
-				25D49489D65E4EB5BA53D866 /* Ketimun-Medium.otf in Resources */,
+				6D6609F052E2406E9E70AF22 /* Ketimun.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = chiti_by_antstuido/chiti_by_antstuido.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = chiti_by_antstuido/Info.plist;
@@ -569,6 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = chiti_by_antstuido/chiti_by_antstuido.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = chiti_by_antstuido/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Chiti;

@@ -10,7 +10,7 @@ export const bottomTabsStyle: any = {
     // bottom: normalize(15),
     // marginHorizontal: normalize(10),
     paddingHorizontal: normalize(15),
-    height: normalize(60),
+    // height: normalize(60),
     borderTopWidth: 0,
     // borderRadius: 20,
   },

@@ -40,7 +40,7 @@ export const AppNavigation = () => {
   return (
     <NavigationContainer onReady={() => RNBootSplash.hide()}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/* {appStatus === APP_STATUS.SPANISH && (
+        {appStatus === APP_STATUS.SPANISH && (
           <Stack.Screen name="SpanishScreen" component={SpanishScreen} />
         )}
         {appStatus === APP_STATUS.ONBOARDING && (
@@ -49,9 +49,9 @@ export const AppNavigation = () => {
         {appStatus === APP_STATUS.AUTH && (
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
         )}
-        {appStatus === APP_STATUS.APP && ( */}
+        {appStatus === APP_STATUS.APP && (
           <Stack.Screen name="DrawerTabs" component={DrawerTabs} />
-        {/* )} */}
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -2,11 +2,15 @@ import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import normalize from 'react-native-normalize';
 
-function SvgComponent() {
+interface LogoSizeProps {
+  height?: number;
+}
+
+function SvgComponent({height = normalize(17 * 5)}: LogoSizeProps) {
   return (
     <Svg
-      width={normalize(43 * 5)}
-      height={normalize(17 * 5)}
+      width={normalize((height * 432) / 178)}
+      height={height}
       viewBox="0 0 432 178"
       fill="none">
       <Path
