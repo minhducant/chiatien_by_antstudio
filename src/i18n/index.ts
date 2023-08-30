@@ -8,7 +8,10 @@ import jp from './jp.json';
 const languageDetector: LanguageDetectorAsyncModule = {
   type: 'languageDetector',
   async: true,
-  detect: (cb: (locale: string) => void) => cb('vi'),
+  detect: (cb: (locale: string) => void) => {
+    const userLanguage = window.navigator.language || 'vi';
+    cb(userLanguage);
+  },
   init: () => {},
   cacheUserLanguage: () => {},
 };
@@ -38,6 +41,7 @@ export default i18n;
 export function t(path: string) {
   return i18n.t(path);
 }
+
 export function changeLanguage(alias: string) {
   i18n.changeLanguage(alias);
 }

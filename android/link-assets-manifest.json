@@ -16,6 +16,22 @@
     {
       "path": "src/assets/fonts/Montserrat-Regular.ttf",
       "sha1": "d25b35242deb1c6ff888b8162ca2aacc356d3899"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Bold.ttf",
+      "sha1": "dea5eec0aca2aef62e3bfc625cf95f9d45b59687"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Italic.ttf",
+      "sha1": "c82dbd0b140a67ab9f201ef062d8377318098399"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Medium.ttf",
+      "sha1": "0e3a9789daa6603bf6870c124727c3643b56574a"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Regular.ttf",
+      "sha1": "4b7236ba666cb77f00d8cb2a17696cc0dc2b2cc9"
     }
   ]
 }

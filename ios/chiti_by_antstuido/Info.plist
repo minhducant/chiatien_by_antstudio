@@ -75,6 +75,10 @@
 		<string>Montserrat-Italic.ttf</string>
 		<string>Montserrat-Regular.ttf</string>
 		<string>Ketimun.otf</string>
+		<string>Nunito-Bold.ttf</string>
+		<string>Nunito-Italic.ttf</string>
+		<string>Nunito-Medium.ttf</string>
+		<string>Nunito-Regular.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
