@@ -5,12 +5,11 @@ import {
   getLanguage,
   getAccessToken,
 } from './Storage';
+import {showMessage} from './Toast';
 import {LogTelegram} from './LogTelegram';
-import {showToast, showMessage} from './Toast';
 import {formatYen, formatVietnamDong, formatDollar} from './FormatMoney';
 
 export {
-  showToast,
   getAccessToken,
   getLanguage,
   formatYen,

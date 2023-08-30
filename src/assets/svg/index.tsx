@@ -9,8 +9,11 @@ import FailToastBackground from './SvgFailToast';
 import IconNotification from './SvgIconNotification';
 import WarningToastBackground from './SvgWarningToast';
 import SuccessToastBackground from './SvgSuccessToast';
+import IconGoogle from './SvgIconGoogle';
+import IconFacebook from './SvgIconFacebook';
 
-export {
+export {``
+  IconGoogle, IconFacebook
   IconSim,
   IconHome,
   LogoChiti,
