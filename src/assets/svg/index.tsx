@@ -12,8 +12,9 @@ import SuccessToastBackground from './SvgSuccessToast';
 import IconGoogle from './SvgIconGoogle';
 import IconFacebook from './SvgIconFacebook';
 
-export {``
-  IconGoogle, IconFacebook
+export {
+  IconGoogle,
+  IconFacebook,
   IconSim,
   IconHome,
   LogoChiti,
