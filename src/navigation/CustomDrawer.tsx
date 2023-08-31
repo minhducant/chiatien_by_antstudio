@@ -1,156 +1,86 @@
-import React, {useContext} from 'react';
+import React from 'react';
+import {useTranslation} from 'react-i18next';
+import {useNavigation} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import {
-  View,
+  // View,
   Text,
-  Alert,
-  Image,
-  StyleSheet,
+  FlatList,
+  Dimensions,
+  SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import {useSelector} from 'react-redux';
-import normalize from 'react-native-normalize';
-import {useNavigation} from '@react-navigation/native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import AsyncStorage from '@react-native-community/async-storage';
 
-import color from '@styles/color';
-import {
-  DrawerContentScrollView,
-  DrawerItemList,
-} from '@react-navigation/drawer';
-import themeStyle from '@styles/theme.style';
-// import { getFirstAlphabetOfName } from '@utils/';
-import {LocalizationContext} from '@context/index';
+import NoFooter from '@navigation/NoFooter';
+import BottomTabs from '@navigation/BottomTabs';
+import {closeDrawer, drawerRef} from '@navigation/RootNavigation';
+import {navigationStyle as styles} from '@styles/navigation.style';
+import {default as DrawerLayout} from '@components/BaseComponent/DrawerLib';
 
-const CustomDrawer = props => {
-  const {t} = useContext(LocalizationContext);
-  const navigation = useNavigation();
-  const userName = useSelector(state => state.auth.user.employee_id.name);
-  const email = useSelector(state => state.auth.user.user_id.login);
+interface NavigationProps {
+  navigate: (route: string, params: {screen: string; params?: any}) => void;
+}
+
+const Stack = createStackNavigator();
+
+const DrawerContent = () => {
+  const {t} = useTranslation();
+  const navigation: NavigationProps = useNavigation();
+
+  const LIST_DRAWER = [
+    {
+      name: t('about_chiti'),
+      icon: 'chiti',
+      onPress: () => {
+        navigation.navigate('NoFooter', {
+          screen: 'AboutChitiScreen',
+        });
+        closeDrawer();
+      },
+    },
+  ];
+
+  const renderItemDrawer = ({item, index}: any) => {
+    return (
+      <TouchableOpacity key={index} onPress={item.onPress}>
+        <Text style={styles.txtItemDrawer}>{item.name}</Text>
+      </TouchableOpacity>
+    );
+  };
 
   return (
-    <View style={stylesSidebar.sideMenuContainer}>
-      <DrawerContentScrollView
-        {...props}
-        contentContainerStyle={stylesSidebar.container}>
-        <TouchableOpacity
-          style={stylesSidebar.drawerItemHeader}
-          activeOpacity={0.5}>
-          <View style={stylesSidebar.viewFlex(2.5)}>
-            <Image
-              source={require('@assets/images/user-profile.jpg')}
-              style={{
-                height: normalize(50),
-                width: normalize(50),
-                borderRadius: normalize(25),
-              }}
-            />
-          </View>
-          <View style={stylesSidebar.viewFlex(7.5)}>
-            <Text style={stylesSidebar.txt(true)} numberOfLines={1}>
-              {userName}
-            </Text>
-            <Text style={stylesSidebar.txt(false)} numberOfLines={1}>
-              {email}
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <View style={stylesSidebar.DrawerItemList}>
-          <DrawerItemList {...props} />
-        </View>
-      </DrawerContentScrollView>
-      <View style={stylesSidebar.viewFooter}>
-        <TouchableOpacity
-          onPress={() => {}}
-          style={{
-            paddingVertical: normalize(10),
-            marginLeft: normalize(5),
-          }}>
-          <View style={stylesSidebar.itemFooter}>
-            <Ionicons name="share-social-outline" size={23} />
-            <Text style={stylesSidebar.textFooter}>{t('share')}</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            props.navigation.toggleDrawer();
-            Alert.alert(
-              t('logout'),
-              t('are_you_sure'),
-              [
-                {
-                  text: t('cancel'),
-                  onPress: () => {
-                    return null;
-                  },
-                },
-                {
-                  text: t('confirm'),
-                  onPress: () => {
-                    AsyncStorage.clear();
-                    navigation.navigate('Auth');
-                  },
-                },
-              ],
-              {cancelable: false},
-            );
-          }}
-          style={{
-            paddingVertical: normalize(10),
-            marginLeft: normalize(5),
-          }}>
-          <View style={stylesSidebar.itemFooter}>
-            <Ionicons name="exit-outline" size={23} />
-            <Text style={stylesSidebar.textFooter}>{t('logout')}</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <SafeAreaView>
+      <FlatList
+        data={LIST_DRAWER}
+        renderItem={renderItemDrawer}
+        contentContainerStyle={styles.drawerFlatList}
+        keyExtractor={(i: any, j: {toString: () => any}) => j.toString()}
+      />
+    </SafeAreaView>
   );
 };
 
-export default CustomDrawer;
+const BottomTabsNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="BottomTabs"
+    screenOptions={{headerShown: false}}>
+    <Stack.Screen name="BottomTabs" component={BottomTabs} />
+    <Stack.Screen name="NoFooter" component={NoFooter} />
+  </Stack.Navigator>
+);
 
-const stylesSidebar = StyleSheet.create({
-  sideMenuContainer: {
-    flex: 1,
-  },
-  container: {
-    backgroundColor: '#ffffff',
-  },
-  DrawerItemList: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: normalize(10),
-  },
-  viewFooter: {
-    paddingLeft: normalize(20),
-    paddingVertical: normalize(10),
-    borderTopWidth: 1,
-    borderTopColor: '#ccc',
-  },
-  textFooter: {
-    fontSize: 15,
-    fontFamily: themeStyle.FONT_FAMILY,
-    marginLeft: normalize(10),
-    color: color.BLACK,
-  },
-  itemFooter: {flexDirection: 'row', alignItems: 'center'},
-  viewFlex: flex => ({
-    flex: flex,
-    justifyContent: 'center',
-    alignItems: flex === 2.5 ? 'center' : 'flex-start',
-  }),
-  drawerItemHeader: {
-    flexDirection: 'row',
-    borderRadius: normalize(7),
-    paddingVertical: normalize(10),
-    marginHorizontal: normalize(10),
-    backgroundColor: '#ddf2dc',
-  },
-  txt: bold => ({
-    fontSize: 16,
-    fontFamily: bold === true ? themeStyle.FONT_BOLD : themeStyle.FONT_FAMILY,
-    color: color.BLACK,
-  }),
-});
+const CustomDrawer = () => {
+  return (
+    <DrawerLayout
+      ref={drawerRef}
+      drawerBackgroundColor={'white'}
+      renderDrawerContent={() => <DrawerContent />}
+      drawerWidth={Dimensions.get('screen').width * 0.75}>
+      <BottomTabsNavigator />
+    </DrawerLayout>
+  );
+};
+
+export default function App() {
+  return <CustomDrawer />;
+}

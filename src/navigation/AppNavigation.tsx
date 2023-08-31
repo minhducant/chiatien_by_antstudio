@@ -10,7 +10,7 @@ import FCMService from '@utils/FCMService';
 import {setFirebaseToken} from '../stores/action';
 
 //----------------------DrawerTabs-----------------------//
-import DrawerTabs from '@navigation/DrawerTabs';
+import CustomDrawer from '@navigation/CustomDrawer';
 //--------------------Authentication---------------------//
 import LoginScreen from '@screens/Authentication/LoginScreen';
 import SpanishScreen from '@screens/Authentication/SpanishScreen';
@@ -50,7 +50,7 @@ export const AppNavigation = () => {
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
         )}
         {appStatus === APP_STATUS.APP && (
-          <Stack.Screen name="DrawerTabs" component={DrawerTabs} />
+          <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
         )}
       </Stack.Navigator>
     </NavigationContainer>

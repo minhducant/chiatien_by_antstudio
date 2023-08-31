@@ -1,12 +1,13 @@
 import * as React from 'react';
+import {Platform} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 import normalize from 'react-native-normalize';
 
 function SvgComponent({fill}: any) {
   return (
     <Svg
-      width={normalize(28)}
-      height={normalize(28)}
+      width={Platform.OS === 'android' ? normalize(32) : normalize(28)}
+      height={Platform.OS === 'android' ? normalize(32) : normalize(28)}
       viewBox="0 0 24 24"
       fill="none">
       <Path

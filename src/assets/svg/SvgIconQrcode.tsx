@@ -1,10 +1,14 @@
 import * as React from 'react';
+import {Platform} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 import normalize from 'react-native-normalize';
 
 function SvgComponent() {
   return (
-    <Svg width={normalize(28)} height={normalize(28)} viewBox="0 0 1024 1024">
+    <Svg
+      width={Platform.OS === 'android' ? normalize(32) : normalize(28)}
+      height={Platform.OS === 'android' ? normalize(32) : normalize(28)}
+      viewBox="0 0 1024 1024">
       <Path
         d="M384 64H134.144c-51.2 0-89.6 41.472-89.6 89.6v227.328c0 51.2 41.472 89.6 89.6 89.6H384c51.2 0 89.6-41.472 89.6-89.6V153.6c0-48.128-38.4-89.6-89.6-89.6zm45.056 316.928c0 25.6-19.456 44.544-45.056 44.544H134.144c-25.6 0-45.056-19.456-45.056-44.544V153.6c0-25.6 19.456-45.056 45.056-45.056H384c25.6 0 45.056 18.944 45.056 45.056v227.328z"
         fill="#00B732"
