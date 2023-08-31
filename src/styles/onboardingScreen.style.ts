@@ -38,7 +38,7 @@ export const onboardingScreenStyle: any = {
     width: '100%',
   },
   txtIntro: {
-    marginTop: normalize(30),
+    marginTop: normalize(20),
     fontSize: 35,
     fontFamily: themeStyle.FONT_BOLD,
   },

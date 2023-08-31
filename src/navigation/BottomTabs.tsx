@@ -12,7 +12,7 @@ import {
   IconNotification,
 } from '@assets/svg/index';
 import color from '@styles/color';
-import {bottomTabsStyle as styles} from '@styles/bottomTabs.style';
+import {navigationStyle as styles} from '@styles/navigation.style';
 
 import HomeScreen from '@screens/Application/Home/HomeScreen';
 import QrCodeScreen from '@screens/Application/QrCode/QrCodeScreen';
