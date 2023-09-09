@@ -5,6 +5,8 @@ import {
   getLanguage,
   getAccessToken,
 } from './Storage';
+import {onLogout} from './Logout';
+import {AsyncApp} from './AsyncApp';
 import {showMessage} from './Toast';
 import {LogTelegram} from './LogTelegram';
 import {formatYen, formatVietnamDong, formatDollar} from './FormatMoney';
@@ -20,4 +22,6 @@ export {
   setStorage,
   getStorage,
   multiRemove,
+  onLogout,
+  AsyncApp,
 };

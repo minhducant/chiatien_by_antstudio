@@ -380,7 +380,7 @@ const styles = StyleSheet.create({
     zIndex: 0,
   },
   overlay: {
-    backgroundColor: '#000',
+    backgroundColor: '#48494a',
     position: 'absolute',
     top: 0,
     left: 0,

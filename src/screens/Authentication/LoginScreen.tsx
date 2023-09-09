@@ -4,7 +4,8 @@ import {View, TouchableOpacity} from 'react-native';
 import {LoginManager, AccessToken} from 'react-native-fbsdk-next';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
-import {showMessage} from '@utils/index';
+import {AuthApi} from '@repository/AuthApi';
+import {showMessage, setStorage} from '@utils/index';
 import {setAppStatus, setIsLoading} from '@stores/action';
 import {loginScreenStyle as styles} from '@styles/loginScreen.style';
 import {LogoChiti, IconGoogle, IconFacebook} from '@assets/svg/index';
@@ -24,8 +25,11 @@ export default function LoginScreen() {
     if (!data) {
       return;
     }
-    console.log(JSON.stringify(data, null, 2));
+    let accessToken: any = data.accessToken;
     dispatch(setIsLoading(true));
+    const dataLogin = await AuthApi.LoginFacebook({accessToken});
+    await setStorage('accessToken', dataLogin.data.accessToken);
+    await setStorage('refreshToken', dataLogin.data.refreshToken);
     dispatch(setIsLoading(false));
     dispatch(setAppStatus(3));
   };
@@ -44,10 +48,14 @@ export default function LoginScreen() {
         return;
       }
       dispatch(setIsLoading(true));
+      const {accessToken} = await GoogleSignin.getTokens();
+      const dataLogin = await AuthApi.LoginGoogle({accessToken});
+      await setStorage('accessToken', dataLogin.data.accessToken);
+      await setStorage('refreshToken', dataLogin.data.refreshToken);
       dispatch(setIsLoading(false));
       dispatch(setAppStatus(3));
-      console.log(JSON.stringify(data, null, 2));
     } catch (error) {
+      dispatch(setIsLoading(false));
       if (__DEV__) {
         console.log('[App] Google Login: ', error);
       }

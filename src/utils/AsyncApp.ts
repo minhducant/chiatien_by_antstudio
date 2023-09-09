@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 
-import {getUserInfo} from '../stores/Config/store';
+import {getUserInfo} from '@stores/Config/store';
 
 export const AsyncApp = () => {
   const dispatch = useDispatch();
